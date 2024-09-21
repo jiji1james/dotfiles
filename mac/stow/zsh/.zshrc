@@ -42,6 +42,9 @@ alias ls="eza --icons=always"
 # Install - brew install zoxide
 eval "$(zoxide init zsh)"
 
+# Enable Completions: https://stackoverflow.com/questions/24513873/git-tab-completion-not-working-in-zsh-on-mac
+autoload -Uz compinit && compinit
+
 # NeoVim
 # Watch - https://www.youtube.com/watch?v=m8C0Cq9Uv9o
 # Github - https://github.com/nvim-lua/kickstart.nvim
