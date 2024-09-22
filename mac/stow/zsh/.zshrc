@@ -42,14 +42,34 @@ alias ls="eza --icons=always"
 # Install - brew install zoxide
 eval "$(zoxide init zsh)"
 
-# Enable Completions: https://stackoverflow.com/questions/24513873/git-tab-completion-not-working-in-zsh-on-mac
-autoload -Uz compinit && compinit
+# FZF
+# Install - brew install fzf
+eval "$(fzf --zsh)"
+# Use fd instead of fzf to ignore .git folders
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
+# fzf theme
+fg="#CBE0F0"
+bg="#011628"
+bg_highlight="#143652"
+purple="#B388FF"
+blue="#06BCE4"
+cyan="#2CF9ED"
 
-# NeoVim
-# Watch - https://www.youtube.com/watch?v=m8C0Cq9Uv9o
-# Github - https://github.com/nvim-lua/kickstart.nvim
+export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 
-# Load user files
+# Source custom personal alias & functions
 source $HOME/mac-config/user_alias.sh
 source $HOME/mac-config/user_functions.sh
 
