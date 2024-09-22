@@ -20,6 +20,8 @@ files=(
 	".gitattributes"
 	".gitconfig"
 	".ideavimrc"
+	".tmux.conf"
+	".p10k.zsh"
 )
 
 folders=(
