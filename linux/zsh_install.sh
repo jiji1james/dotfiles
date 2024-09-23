@@ -3,9 +3,6 @@
 # Set current working directory
 cwd=$(pwd)
 
-# Install prerequisites
-brew install git zsh bash stow
-
 # Figure out if this is fedora/ubuntu
 source /etc/os-release
 echo ""
@@ -23,8 +20,11 @@ fi
 # Install ZSH
 echo ""
 echo ">>> Installing zsh & other prerequisites"
-brew install git zsh bash stow
-
+if $IS_FEDORA; then
+	sudo dnf install -y bash zsh stow wget
+elif $IS_UBUNTU; then
+	sudo apt install -y bash zsh stow curl
+fi
 
 # Change default shell
 echo ""
@@ -32,14 +32,8 @@ echo ">>> Change default shell to zsh"
 chsh -s $(which zsh)
 grep $USER /etc/passwd
 
-# Install Meslo Font
-echo ""
-echo ">>> Installing font"
-mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/Meslo/S/Regular/MesloLGSNerdFontMono-Regular.ttf
-
-# Install powerlevel10k
-brew install powerlevel10k
+# Install ZSH Utils
+curl -s https://ohmyposh.dev/install.sh | bash -s
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 brew install eza

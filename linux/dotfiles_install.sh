@@ -25,6 +25,7 @@ files=(
 )
 
 folders=(
+	".config/ohmyposh"
 )
 
 echo ""
