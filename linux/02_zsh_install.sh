@@ -21,9 +21,9 @@ fi
 echo ""
 echo ">>> Installing zsh & other prerequisites"
 if $IS_FEDORA; then
-	sudo dnf install -y bash zsh stow curl wget tmux
+	sudo dnf install -y curl wget tmux
 elif $IS_UBUNTU; then
-	sudo apt install -y bash zsh stow curl wget tmux
+	sudo apt install -y curl wget tmux
 fi
 
 # Change default shell
