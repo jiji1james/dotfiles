@@ -21,9 +21,9 @@ fi
 echo ""
 echo ">>> Installing zsh & other prerequisites"
 if $IS_FEDORA; then
-	sudo dnf install -y curl wget tmux
+	sudo dnf install -y curl wget tmux bash zsh
 elif $IS_UBUNTU; then
-	sudo apt install -y curl wget tmux
+	sudo apt install -y curl wget tmux bash zsh
 fi
 
 # Change default shell
@@ -32,8 +32,13 @@ echo ">>> Change default shell to zsh"
 chsh -s $(which zsh)
 grep $USER /etc/passwd
 
+# Add to brew to PATH. This is required during first time setup.
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Install Powerlevel10k
+brew install powerlevel10k
+
 # Install ZSH Utils
-curl -s https://ohmyposh.dev/install.sh | bash -s
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 brew install eza

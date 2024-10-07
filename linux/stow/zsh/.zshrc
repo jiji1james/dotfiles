@@ -9,13 +9,6 @@ fi
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# Load Homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-# Oh-My-Posh
-export PATH=$PATH:$HOME/.local/bin
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
-
 # History Setup
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
@@ -28,6 +21,8 @@ setopt hist_verify
 # completion using arrow keys (based on history)
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Auto Suggestions:
 # Install - brew install zsh-autosuggestions
@@ -77,4 +72,12 @@ export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${
 # Source custom personal alias & functions
 source $HOME/linux-config/user_alias.sh
 source $HOME/linux-config/user_functions.sh
+
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias toolbox="/opt/jetbrains/jetbrains-toolbox/jetbrains-toolbox > /dev/null 2>&1 &"
+alias idea="~/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea.sh > /dev/null 2>&1 &"
+alias idea.="~/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea.sh . > /dev/null 2>&1 &"
 
