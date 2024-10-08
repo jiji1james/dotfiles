@@ -6,9 +6,6 @@
 # # Add to PATH
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 #
-# # Install bare minimum
-brew install git zsh bash stow
-#
 
 # Files to be stowed
 files=(
