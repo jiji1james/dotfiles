@@ -78,6 +78,6 @@ source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias toolbox="/opt/jetbrains/jetbrains-toolbox/jetbrains-toolbox > /dev/null 2>&1 &"
-alias idea="~/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea.sh > /dev/null 2>&1 &"
-alias idea.="~/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea.sh . > /dev/null 2>&1 &"
+alias ideac="~/.local/share/JetBrains/Toolbox/apps/intellij-idea-community-edition/bin/idea.sh > /dev/null 2>&1 &"
+alias ideac.="~/.local/share/JetBrains/Toolbox/apps/intellij-idea-community-edition/bin/idea.sh . > /dev/null 2>&1 &"
 
