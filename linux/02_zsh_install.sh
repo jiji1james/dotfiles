@@ -21,9 +21,9 @@ fi
 echo ""
 echo ">>> Installing zsh & other prerequisites"
 if $IS_FEDORA; then
-	sudo dnf install -y curl wget tmux bash zsh
+	sudo dnf install -y curl wget tmux bash zsh which neovim
 elif $IS_UBUNTU; then
-	sudo apt install -y curl wget tmux bash zsh
+	sudo apt install -y curl wget tmux bash zsh which neovim
 fi
 
 # Change default shell
