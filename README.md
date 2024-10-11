@@ -36,3 +36,9 @@ sudo apt install -y bat neovim
 mkdir -p ~/.local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
 ```
+Continue on to Development Environment Setup
+```
+cd ~
+git clone git@github.com:jiji1james/linux-config.git
+```
+
