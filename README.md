@@ -1,5 +1,5 @@
 # Setting up Ubuntu in WSL
-Copy ssh keys from windows
+Copy ssh keys from windows. Replace *JijiJames* with the windows username.
 ```
 cp -r /mnt/c/Users/JijiJames/.ssh ~/
 ```
