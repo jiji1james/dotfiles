@@ -15,7 +15,7 @@ sudo apt install -y git stow bash zsh zip unzip dos2unix
 Fix the ssh keys
 ```
 cd ~/.ssh
-chmod 400 id_ed25519*
+chmod 400 id_*
 chmod 400 keys/*pem
 find . -type f -exec dos2unix {} +
 cd ~
