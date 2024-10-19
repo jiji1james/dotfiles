@@ -35,9 +35,6 @@ grep $USER /etc/passwd
 # Add to brew to PATH. This is required during first time setup.
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# Install Powerlevel10k
-brew install powerlevel10k
-
 # Install ZSH Utils
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
