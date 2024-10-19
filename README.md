@@ -18,13 +18,9 @@ cd ~/.ssh
 chmod 400 id_ed25519*
 chmod 400 keys/*pem
 find . -type f -exec dos2unix {} +
-```
-Clone the dotfiles repository
-```
 cd ~
-git clone git@github.com:jiji1james/dotfiles.git
 ```
-Setup linux environment using the dotfiles
+Setup linux environment using the dotfiles. These commands will ask for your password a few times.
 ```
 cd ~/dotfiles/linux
 ./01_dotfiles_install.sh
@@ -36,9 +32,3 @@ sudo apt install -y bat neovim
 mkdir -p ~/.local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
 ```
-Continue on to Development Environment Setup
-```
-cd ~
-git clone git@github.com:jiji1james/linux-config.git
-```
-
