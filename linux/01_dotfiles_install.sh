@@ -18,7 +18,7 @@ files=(
 	".gitconfig"
 	".ideavimrc"
 	".tmux.conf"
-	".p10k.zsh"
+	".config/starship.toml"
 )
 
 folders=(

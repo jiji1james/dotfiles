@@ -21,9 +21,9 @@ fi
 echo ""
 echo ">>> Installing zsh & other prerequisites"
 if $IS_FEDORA; then
-	sudo dnf install -y curl wget tmux bash zsh
+	sudo dnf install -y curl wget tmux bash zsh which neovim
 elif $IS_UBUNTU; then
-	sudo apt install -y curl wget tmux bash zsh
+	sudo apt install -y curl wget tmux bash zsh which neovim
 fi
 
 # Change default shell
@@ -34,9 +34,6 @@ grep $USER /etc/passwd
 
 # Add to brew to PATH. This is required during first time setup.
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-# Install Powerlevel10k
-brew install powerlevel10k
 
 # Install ZSH Utils
 brew install zsh-autosuggestions
