@@ -28,6 +28,7 @@ files=(
 folders=(
 	".config/wezterm"
 	".config/iterm"
+	".continue"
 )
 
 echo ""
