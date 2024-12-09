@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-# # Install brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-#
-# # Add to PATH
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-#
-
 # Files to be stowed
 files=(
 	".zprofile"
@@ -22,7 +15,7 @@ files=(
 )
 
 folders=(
-	".config/ohmyposh"
+	".config/nvim"
 )
 
 echo ""
