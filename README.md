@@ -10,7 +10,7 @@ sudo apt upgrade -y
 ```
 Install basic software
 ```
-sudo apt install -y git stow bash zsh zip unzip dos2unix
+sudo apt install -y git stow bash zsh zip unzip dos2unix build-essential
 ```
 Fix the ssh keys
 ```
