@@ -8,14 +8,25 @@ source /etc/os-release
 echo ""
 echo ">>> Linux OS Release: $PRETTY_NAME"
 
+# Set OS Flags
+if [[ $PRETTY_NAME == *"Ubuntu"* ]]; then
+  export IS_UBUNTU=true
+  export IS_FEDORA=false
+elif [[ $PRETTY_NAME == *"Fedora"* ]]; then
+  export IS_UBUNTU=false
+  export IS_FEDORA=true
+fi
+
 # Install pre-requisite software
 if $IS_UBUNTU; then
+  echo "Updating Ubuntu System"
   sudo apt update
   sudo apt upgrade -y
-  sudo apt install -y git stow bash zsh zip unzip dos2unix build-essential
+  sudo apt install -y git stow bash zsh zip unzip dos2unix dirmngr gpg curl gawk build-essential
 elif $IS_FEDORA; then
+  echo "Updating Fedora System"
   sudo dnf update
-  sudo dnf install -y git stow bash zsh zip unzip dos2unix build-essential
+  sudo dnf install -y git stow bash zsh zip unzip dos2unix gnupg2 curl gawk build-essential
 fi
 
 # Set OS Flags
@@ -47,14 +58,14 @@ folders=(
 
 echo ""
 while true; do
-  read -p ">>>Applying stowed configuration files. Do you want to continue? (y/n): " yn
+  read -p ">>> Applying stowed configuration files. Do you want to continue? (y/n): " yn
   case $yn in
   [Yy]*) break ;;
   [Nn]*)
     echo "Exiting..."
     exit
     ;;
-  *) echo "Please answer yes or no." ;;
+  *) echo "Please answer y or n." ;;
   esac
 done
 
