@@ -9,7 +9,7 @@ echo ""
 echo ">>> Linux OS Release: $PRETTY_NAME"
 
 # Set OS Flags
-if [[ $PRETTY_NAME == *"Ubuntu"* ]]; then
+if [[ $PRETTY_NAME == *"Ubuntu"* ]] || [[ $PRETTY_NAME == *"Kali"* ]]; then
   export IS_UBUNTU=true
   export IS_FEDORA=false
 elif [[ $PRETTY_NAME == *"Fedora"* ]]; then
