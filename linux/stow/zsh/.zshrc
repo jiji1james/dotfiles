@@ -66,9 +66,9 @@ source $HOME/linux-config/user_functions.sh
 # Starship Prompt
 eval "$(starship init zsh)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# Add sdkman to path
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-alias idea="$HOME/.local/share/JetBrains/Toolbox/apps/intellij-idea-community-edition/bin/idea > /dev/null 2>&1 &"
-
+# Add homebrew to path
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
