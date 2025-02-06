@@ -24,7 +24,16 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# Source custom personal alias & functions
+source $HOME/linux-config/user_alias.sh
+source $HOME/linux-config/user_functions.sh
+
+# Add sdkman to path
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Add homebrew to path
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Starship Prompt
+eval "$(starship init bash)"
