@@ -1,14 +1,40 @@
 format = """
-$username\
-$hostname\
+$os \
+$shell \
 $directory\
+$java\
 $git_branch\
 $git_state\
 $git_status\
 $cmd_duration\
 $line_break\
-$python\
 $character"""
+
+[os]
+disabled = false
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
 
 [directory]
 style = "blue"
@@ -41,6 +67,9 @@ style = "bright-black"
 format = "[$duration]($style) "
 style = "yellow"
 
-[python]
-format = "[$virtualenv]($style) "
-style = "bright-black"
+[shell]
+disabled = false
+bash_indicator = ""
+powershell_indicator = ""
+cmd_indicator = ""
+

@@ -22,11 +22,18 @@ if $IS_UBUNTU; then
   echo "Updating Ubuntu System"
   sudo apt update
   sudo apt upgrade -y
-  sudo apt install -y git stow bash zsh zip unzip dos2unix dirmngr gpg curl gawk build-essential
+  sudo apt install -y nala
+  sudo nala install -y git stow bash zsh zip unzip dos2unix dirmngr gpg curl gawk build-essential
+
+  # Install starship prompt
+  curl -sS https://starship.rs/install.sh | sh
 elif $IS_FEDORA; then
   echo "Updating Fedora System"
   sudo dnf update
   sudo dnf install -y git stow bash zsh zip unzip dos2unix gnupg2 curl gawk build-essential
+
+  # Install starship prompt
+  curl -sS https://starship.rs/install.sh | sh
 fi
 
 # Set OS Flags
